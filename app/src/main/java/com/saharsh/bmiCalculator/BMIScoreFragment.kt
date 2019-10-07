@@ -1,7 +1,9 @@
 package com.saharsh.bmiCalculator
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Typeface
@@ -10,6 +12,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,11 +21,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bmi_fragment.*
 import java.io.*
 import java.lang.Exception
 import java.util.*
+import java.util.jar.Manifest
 
 
 class BMIScoreFragment(value: Double, context: Context) : BottomSheetDialogFragment()
@@ -31,6 +37,7 @@ class BMIScoreFragment(value: Double, context: Context) : BottomSheetDialogFragm
     val result = value
     private var fragmentView: View? = null
     var contexts = context
+    val REQUEST_CODE = 100
 
 
 
@@ -141,8 +148,9 @@ class BMIScoreFragment(value: Double, context: Context) : BottomSheetDialogFragm
 
         var saveImage:TextView? = fragmentView?.findViewById(R.id.saveImage)
         saveImage?.setOnClickListener(View.OnClickListener {
-            var bitmap  = convertImage(bottomsheets)
-            saveImageToExternalStorage(bitmap)
+            //Asking for permission...
+            setupPermissions()
+
         })
 
         var shareImage:TextView? = fragmentView?.findViewById(R.id.shareImage)
@@ -206,10 +214,16 @@ class BMIScoreFragment(value: Double, context: Context) : BottomSheetDialogFragm
     // Method to save an image to external storage
     private fun saveImageToExternalStorage(bitmap:Bitmap):Uri{
         // Get the external storage directory path
-        val path = Environment.getExternalStorageDirectory().toString()
+        val path = Environment.getExternalStorageDirectory().toString()+"/BMI"
 
+        val folder = File(path)
+        if(!folder.exists()){
+            val directory = File(path)
+            directory.mkdirs()
+        }
         // Create a file to save the image
-        val file = File(path, "mybmi.jpg")
+
+        val file = File(path, "bmi.jpg")
         if(file.exists()){
             file.delete()
         }
@@ -240,4 +254,46 @@ class BMIScoreFragment(value: Double, context: Context) : BottomSheetDialogFragm
     fun toast(message: String) {
         Toast.makeText(contexts, message, Toast.LENGTH_SHORT).show()
     }
+
+    private fun setupPermissions(){
+        val permission = ContextCompat.checkSelfPermission(contexts, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if(permission!=PackageManager.PERMISSION_GRANTED){
+            makeRequest()
+        }
+        else{
+            //Permission have been already granted...
+            //Saving image to external storage..
+
+            var bitmap  = convertImage(bottomsheets)
+            saveImageToExternalStorage(bitmap)
+        }
+    }
+
+    private fun makeRequest() {
+        ActivityCompat.requestPermissions(contexts as Activity,
+            arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            REQUEST_CODE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode){
+            REQUEST_CODE -> {
+                if(grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                    Log.i("tag", "Permission has been denied by User")
+                }
+                else{
+                    Log.i("tag", "Permission has been granted by User")
+                    //Saving Image to external storage....
+                    var bitmap  = convertImage(bottomsheets)
+                    saveImageToExternalStorage(bitmap)
+                }
+            }
+        }
+    }
+
 }

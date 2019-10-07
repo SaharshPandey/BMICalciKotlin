@@ -20,7 +20,7 @@
 
     <style name="AppModalStyle"
         parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/border_button</item>
+        <item name="android:background">@drawable/rounded_dialog</item>
         <item name="behavior_peekHeight">1000dp</item>
         <item name="android:state_expanded">true</item>
 

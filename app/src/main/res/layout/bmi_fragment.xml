@@ -5,264 +5,264 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
- >
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
 
-    <View
-        android:layout_width="9dp"
-        android:layout_height="2dp"
-        android:background="@color/gray"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26sp"
-        android:layout_marginTop="20dp"
-        android:text="Your BMI Score"
-        android:textColor="@color/colorAccent"
-        android:layout_gravity="center"
-        android:fontFamily="@font/lato_bold"
-        />
-    <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:background="@drawable/view_rounded"
-        >
-        <LinearLayout
-            android:layout_centerInParent="true"
+        <View
+            android:layout_width="9dp"
+            android:layout_height="2dp"
+            android:background="@color/gray"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:textSize="26sp"
+            android:layout_marginTop="20dp"
+            android:text="Your BMI Score"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/lato_bold"
+            />
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/view_rounded"
             >
-            <androidx.appcompat.widget.AppCompatTextView
+            <LinearLayout
+                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/bmi_score_tv"
-                android:text="19.6"
-                android:textSize="40sp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/green_tv"
-                />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bmi_score_tv"
+                    android:text="19.6"
+                    android:textSize="40sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/green_tv"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bmi_title_tv"
+                    android:text="Normal!"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/green_tv"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bmi_title_tv"
-                android:text="Normal!"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textSize="26sp"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/green_tv"
-                />
+                android:layout_marginTop="15dp"
+
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/underweight_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Underweight"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/underweight_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="18.5"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normal_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/normal_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="18.5 - 25"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/overweight_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overweight"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/overweight_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="25 - 30"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/obese_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Obese"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/obese_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="30 - 35"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/severely_obese_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="Severely Obese"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/severely_obese_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="35 - 40"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/very_severely_obese_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Very Severely Obese"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/very_severely_obese_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="40"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/lato_medium"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
             >
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/underweight_tv"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/saveImage"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Underweight"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/underweight_count_tv"
-                android:layout_width="wrap_content"
+                android:text="Save"
+                android:background="@drawable/border_button"
+                android:padding="10dp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/shareImage"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="18.5"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
+                android:text="Share"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/border_button"
+                android:gravity="center"/>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-
-            >
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/normal_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Normal"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/normal_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="18.5 - 25"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-
-            >
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/overweight_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Overweight"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/overweight_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="25 - 30"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            >
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/obese_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Obese"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/obese_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="30 - 35"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-
-            >
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/severely_obese_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:fontFamily="@font/lato_medium"
-                android:text="Severely Obese"
-                android:textColor="@color/black"
-                android:textSize="17sp" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/severely_obese_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="35 - 40"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            >
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/very_severely_obese_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Very Severely Obese"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/very_severely_obese_count_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="40"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:fontFamily="@font/lato_medium"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
-        >
-        <TextView
-            android:id="@+id/saveImage"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:background="@drawable/border_button"
-            android:padding="10dp"
-            android:textColor="@color/colorAccent"
-            android:layout_marginEnd="10dp"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/shareImage"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Share"
-            android:padding="10dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/border_button"
-            android:gravity="center"/>
-
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 </FrameLayout>
